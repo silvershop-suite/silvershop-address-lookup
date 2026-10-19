@@ -1,7 +1,7 @@
 # silvershop/address-lookup
 
 Checkout address autocomplete for [SilverShop](https://github.com/silvershop/silvershop-core) (CMS 6), built on
-[`silvershop/address-formats`](https://github.com/silvershop/silvershop-address-formats).
+[`silvershop/address-formats`](https://github.com/RVXD/silvershop-address-formats).
 
 Enter a **postcode + house number** and the street + city fill in automatically — the standard Dutch/German checkout
 pattern — via a **server-side lookup service** behind a **per-country provider seam**. The base module bundles three
@@ -116,7 +116,7 @@ SilverShop\AddressLookup\Provider\AddressLookupProviderRegistry:
 
 - PHP ^8.3
 - silverstripe/framework ^6, silverstripe/cms ^6
-- silvershop/core ^6, silvershop/address-formats ^6
+- silvershop/core ^6, silvershop/address-formats ^1.3
 - guzzlehttp/guzzle ^7.5
 
 ## License
