@@ -6,7 +6,12 @@
     "keywords": ["silverstripe", "silvershop", "address", "autocomplete", "postcode", "checkout", "pdok", "openplz", "zippopotam"],
     "authors": [
         {
-            "name": "RVXD"
+            "name": "Remy Vaartjes",
+            "email": "remy@xd.nl",
+            "role": "Lead developer"
+        },
+        {
+            "name": "SilverShop-Suite Contributors"
         }
     ],
     "require": {
