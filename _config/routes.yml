@@ -1,0 +1,7 @@
+---
+Name: silvershop-address-lookup-routes
+After: '#rootroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'shop-address-lookup': 'SilverShop\AddressLookup\Control\AddressLookupController'

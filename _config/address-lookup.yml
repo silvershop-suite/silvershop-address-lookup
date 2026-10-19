@@ -1,0 +1,24 @@
+---
+Name: silvershop-address-lookup
+After:
+  - '#silvershop-address-formats'
+---
+SilverShop\Model\Address:
+  extensions:
+    - SilverShop\AddressLookup\Extension\AddressLookupFormExtension
+
+SilverShop\AddressLookup\Provider\AddressLookupProviderRegistry:
+  # BASE registers the three free, keyless providers. Each paid satellite registers its own key here.
+  providers:
+    pdok: '%$SilverShop\AddressLookup\Provider\PdokProvider'        # NL, PDOK Locatieserver (government BAG)
+    openplz: '%$SilverShop\AddressLookup\Provider\OpenPlzProvider'  # DE/AT/CH/LI, OpenPLZ API, street-level
+    zippopotam: '%$SilverShop\AddressLookup\Provider\ZippopotamProvider'  # global, postcode -> city/state (+lat/lng), no street
+  # EMPTY default -> unmapped countries fall back to the MANUAL form (no surprise third-party call).
+  default: ~
+  # NL + DE autofill out of the box. Zippopotam is registered but unmapped (opt-in: map a country to it to enable).
+  # BE is mapped to pdok for forward-compat with the MyParcel satellite (install -myparcel, then remap NL/BE -> myparcel);
+  # PDOK itself is NL-only, so until a BE-capable provider is installed BE resolves nothing and uses the manual form.
+  by_country:
+    NL: pdok
+    BE: pdok
+    DE: openplz

@@ -1,0 +1,15 @@
+includes:
+    - vendor/cambis/silverstan/extension.neon
+
+parameters:
+    level: 5
+    paths:
+        - src
+    # ConsentResolver touches the SOFT dependency silvershop/cookieconsent behind a class_exists() guard, so the
+    # ConsentState class is absent from the standalone analysis (cookieconsent is `suggest`, not `require`). It is
+    # exercised in the clean-room / on a shop where the module is present.
+    excludePaths:
+        - src/Consent/ConsentResolver.php
+    treatPhpDocTypesAsCertain: false
+    silverstan:
+        includeTestOnly: true
