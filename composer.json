@@ -32,7 +32,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/RVXD/silvershop-address-formats.git"
+            "url": "https://github.com/silvershop-suite/silvershop-address-formats.git"
         }
     ],
     "scripts": {
