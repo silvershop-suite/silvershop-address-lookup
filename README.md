@@ -1,7 +1,7 @@
-# silvershop/address-lookup
+# silvershop-suite/address-lookup
 
 Checkout address autocomplete for [SilverShop](https://github.com/silvershop/silvershop-core) (CMS 6), built on
-[`silvershop/address-formats`](https://github.com/RVXD/silvershop-address-formats).
+[`silvershop-suite/address-formats`](https://github.com/RVXD/silvershop-address-formats).
 
 Enter a **postcode + house number** and the street + city fill in automatically — the standard Dutch/German checkout
 pattern — via a **server-side lookup service** behind a **per-country provider seam**. The base module bundles three
@@ -32,7 +32,7 @@ here; the base `suggest`s them.
 ## Installation
 
 ```bash
-composer require silvershop/address-lookup
+composer require silvershop-suite/address-lookup
 ```
 
 Then run `dev/build?flush=all`. NL and DE autofill immediately — no keys, no configuration.
@@ -55,7 +55,7 @@ SilverShop\AddressLookup\Provider\AddressLookupProviderRegistry:
 
 - **Enable the free global fallback.** Map any country to `zippopotam` (registered but unmapped by default), or set
   `default: zippopotam`, to autofill city/region from the postcode everywhere Zippopotam has coverage.
-- **Swap in a paid satellite.** Install e.g. `silvershop/address-lookup-myparcel`, then remap `by_country: { NL: myparcel }`.
+- **Swap in a paid satellite.** Install e.g. `silvershop-suite/address-lookup-myparcel`, then remap `by_country: { NL: myparcel }`.
 
 ## Hardening
 
@@ -75,10 +75,10 @@ order) and declare **no consent category**, so they run without a cookie gate. A
 
 ```yaml
 SilverShop\AddressLookup\Provider\SomeProvider:
-  consent_category: marketing   # gated via silvershop/cookieconsent; default-deny when that module is absent
+  consent_category: marketing   # gated via silvershop-suite/cookieconsent; default-deny when that module is absent
 ```
 
-`Consent\ConsentResolver` is the single binding point to `silvershop/cookieconsent`; without a declared category it is
+`Consent\ConsentResolver` is the single binding point to `silvershop-suite/cookieconsent`; without a declared category it is
 a pass-through.
 
 ## Frontend
@@ -116,7 +116,7 @@ SilverShop\AddressLookup\Provider\AddressLookupProviderRegistry:
 
 - PHP ^8.3
 - silverstripe/framework ^6, silverstripe/cms ^6
-- silvershop/core ^6, silvershop/address-formats ^1.3
+- silvershop/core ^6, silvershop-suite/address-formats ^1.3
 - guzzlehttp/guzzle ^7.5
 
 ## License
