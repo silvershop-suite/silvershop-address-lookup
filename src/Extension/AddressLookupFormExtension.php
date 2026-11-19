@@ -18,8 +18,8 @@ use SilverStripe\SiteConfig\SiteConfig;
 
 /**
  * Front-end wiring for checkout address autocomplete. Applied to {@link \SilverShop\Model\Address} and hooks the same
- * `updateFormFields` seam that silvershop/address-formats uses, so it runs after the per-country field rules are in
- * place. It injects a per-country config ({mode, endpoint, field map}) as inline JSON plus a vanilla, no-build
+ * `updateFormFields` seam that silvershop-suite/address-formats uses, so it runs after the per-country field rules are
+ * in place. It injects a per-country config ({mode, endpoint, field map}) as inline JSON plus a vanilla, no-build
  * bootstrap script (the address-formats inline-script-via-LiteralField pattern — no theme edit, no asset pipeline).
  *
  * The script is scoped to `.silvershop-address-fields` and cooperates with address-formats' `addressformat:changed`

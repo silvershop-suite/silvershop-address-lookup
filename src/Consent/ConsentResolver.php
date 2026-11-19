@@ -9,7 +9,7 @@ use SilverStripe\Core\Config\Configurable;
 use SilverStripe\Core\Injector\Injectable;
 
 /**
- * The single binding point to silvershop/cookieconsent. The three bundled providers are functional/necessary (EU
+ * The single binding point to silvershop-suite/cookieconsent. The three bundled providers are functional/necessary (EU
  * government / EU logistics processors used only to fulfil the order) and declare no consent category, so this
  * resolver passes them through untouched. It exists for a FUTURE gated provider (e.g. a non-EU one declaring
  * `consent_category: marketing`): only then is cookieconsent consulted.
